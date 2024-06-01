@@ -1,0 +1,49 @@
+Função da Lambda
+Esta função Lambda envia e-mails utilizando o Amazon Simple Email Service (SES). A função recebe os detalhes do e-mail (destinatário, assunto, corpo do texto e corpo do HTML) como parâmetros de entrada.
+
+Entrada e Saída Esperadas
+
+Entrada:
+
+to_email: O endereço de e-mail do destinatário.
+subject: O assunto do e-mail.
+body_text: O corpo do e-mail em formato de texto simples.
+body_html: O corpo do e-mail em formato HTML.
+Exemplo de evento de entrada:
+
+json
+{
+    "to_email": "recipient@example.com",
+    "subject": "Test Email",
+    "body_text": "This is a test email.",
+    "body_html": "<h1>This is a test email.</h1>"
+}
+
+Saída:
+
+Em caso de sucesso:
+json
+{
+    "statusCode": 200,
+    "body": "\"Email sent! Message ID: <message-id>\""
+}
+
+Em caso de erro (falta de chave):
+json
+{
+    "statusCode": 400,
+    "body": "\"Missing required key: <key>\""
+}
+
+Em caso de erro (envio de e-mail):
+json
+{
+    "statusCode": 500,
+    "body": "\"<error-message>\""
+}
+
+Dependências Externas
+Boto3: A biblioteca AWS SDK para Python.
+Instruções para Execução
+
+
