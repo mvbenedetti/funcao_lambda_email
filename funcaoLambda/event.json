@@ -1,0 +1,6 @@
+{
+  "to_email": "cristiane7168@uorak.com",
+  "subject": "Test Email",
+  "body_text": "This is a test email.",
+  "body_html": "<h1>This is a test email.</h1>"
+}
